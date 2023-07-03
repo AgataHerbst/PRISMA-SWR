@@ -3,11 +3,10 @@ import { editUserFromInputData } from '../../lib/userColumns';
 
 export default async function handler(req, res) {
     console.log('>> ', req.method, ' запрос на', req.url);
-    // console.log('req.body', req.body);
+
 
     const { user, inputData } = JSON.parse(req.body);
 
-    // console.log('req.headers', req.headers);
 
     try {
         const editedUser = await updateUser(editUserFromInputData(user, inputData));

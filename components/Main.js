@@ -4,21 +4,14 @@ import userColumns, { createUserFromFormData, editUserFromInputData } from '../l
 
 import ItemTR from './ItemTR';
 import Spinner from './Spinner';
-import css from './Main.module.sass';
+//import css from './Main.module.sass';
 import { useRef, useState } from 'react';
 
 import transmitData from '../includes/transmitData'
 import { replaceObjectById } from '../includes/replaceObjectById'
 
 const fetcher = url => fetch(url).then(r => r.json());
-
-
-console.log('Друзья, мы с вами в ', typeof navigator !== 'undefined' ? navigator.userAgent : '', typeof process !== 'undefined' ? 'Node ' + process?.version : '');
-console.log('и только сегодня swr=', swr); // а если без мата? -  то он промолчал 
-const useSWR = swr?.default || swr; // и поэтому вот так
-
-
-
+const useSWR = swr?.default || swr; 
 
 export default function Main() {
   const
@@ -28,10 +21,6 @@ export default function Main() {
 
     formRef = useRef(null),
     { data, error, isLoading, mutate } = useSWR('/api/users', fetcher);
-
-  // console.log('Main render ', { data, error, isLoading });
-  // console.log('data=', data);
-  // console.log('data.error=', data?.error);
 
   console.log('editableUser=', editableUser);
 
