@@ -43,3 +43,15 @@ export function editUserFromInputData(userForEdit: any, data: FormDataType) {
 
   return collectedUser;
 }
+
+// export function changeUsers(data: FormDataType, userForEdit: any = defaultUser) {
+//   const collectedUser = Object.assign({}, userForEdit);
+//   Object.keys(data).map(key => userColumns.find(({ name }) => key === name)?.setVal(collectedUser, data[key as ColumnsNames]));
+
+//   console.log('collectedUser= ', collectedUser);
+
+//   delete collectedUser.address
+//   delete collectedUser.company
+
+//   return collectedUser;
+// }
